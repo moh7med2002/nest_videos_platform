@@ -45,6 +45,7 @@ export class CategoryService {
 
   async fetchAll() {
     const categories = await this.categoryRepositry.findAll({
+      order: [['createdAt', 'desc']],
       attributes: { exclude: ['createdAt', 'updatedAt'] },
     });
     return { categories };

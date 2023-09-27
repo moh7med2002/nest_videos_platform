@@ -21,6 +21,12 @@ export class Video extends Model {
   @Column({ type: DataType.STRING, allowNull: false })
   title: string;
 
+  @Column({ type: DataType.STRING, allowNull: false })
+  image: string;
+
+  @Column({ type: DataType.INTEGER, allowNull: false, defaultValue: 0 })
+  views: number;
+
   @ForeignKey(() => Category)
   @Column({})
   categoryId: number;

@@ -18,7 +18,7 @@ export const databaseProviders = [
         Video,
         History,
       ]);
-      await sequelize.sync({ force: true });
+      await sequelize.sync({ alter: false });
       return sequelize;
     },
   },

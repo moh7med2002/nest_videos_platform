@@ -11,6 +11,7 @@ import { hashPassword, VerifyPassword } from 'src/common/util/passwordUtil';
 import { generateToken } from 'src/common/util/generateToken';
 import { userRepositry } from 'src/constants/entityRepositry';
 import { User } from './user.entity';
+import { sendWhtsappMessage } from 'src/common/util/sendWhatsapp';
 
 @Injectable()
 export class UserService {
@@ -55,6 +56,7 @@ export class UserService {
     const payload = { userId: user.id, role: Role.User };
     const access_token = generateToken(payload);
     const { password, ...other } = user.toJSON();
+    await sendWhtsappMessage();
     return {
       msg: 'success login',
       user: other,
