@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const data = qs.stringify({
   token: 'amwpl79ehcu458x9',
-  to: '+972592374719',
+  to: 'your phone',
   body: 'hi from mohammed',
 });
 
